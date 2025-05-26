@@ -1,0 +1,43 @@
+﻿<Window x:Class="AplicationApp.View.Windows.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicationApp.View.Windows"
+        mc:Ignorable="d"
+        Title="UserWindow"  Height="800"
+        Width="1300"
+        Background="#FFF1F3F6"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        >
+
+    <Border Background="White" CornerRadius="12" BorderBrush="#DADADA" BorderThickness="1" Padding="10" >
+        <DockPanel LastChildFill="True">
+
+            <!-- Top Bar -->
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="60" Background="#2D2D30" VerticalAlignment="Center">
+               
+                <TextBox Width="300" Margin="10" VerticalAlignment="Center" 
+                         Background="#FFFFFF" Padding="8" BorderBrush="#CCCCCC" BorderThickness="1"
+                         TextChanged="SearchTextBox_TextChanged"/>
+                <Button Width="40" Height="40" Background="Transparent" BorderThickness="0" Margin="10" Click="OpenProfilePage">
+                    <Image Source="/Assets/Image/prof.png" Width="30" Height="30"/>
+                </Button>
+            </StackPanel>
+
+            <!-- Side Menu -->
+            <StackPanel DockPanel.Dock="Left" Width="200" Background="#F5F5F5" >
+                <Button Content="Товары" Height="45" Margin="0,10" Background="#4A90E2" Foreground="White" Click="OpenPRoductPage"/>
+                <Button Content="Корзина" Height="45" Margin="0,10" Background="#4A90E2" Foreground="White" Click="OpenBasketPAge"/>
+                <Button Content="Заказы" Height="45" Margin="0,10" Background="#4A90E2" Foreground="White" Click="OpenOrderClick"/>
+                <Separator Margin="10"/>
+                <Button Content="Выход" Height="45" Margin="0,10,0,0" Background="#E74C3C" Foreground="White" Click="AnloginClick"/>
+                
+            </StackPanel>
+
+            <!-- Main Content -->
+            <Frame x:Name="MainFrame" Margin="10" Background="White"/>
+        </DockPanel>
+    </Border>
+</Window>

@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="AplicationApp.View.Pagess.Admin.AdminUsersPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AplicationApp.View.Pagess.Admin"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="20" Background="#FAFAFA">
+        <StackPanel>
+            <TextBlock Text="Пользователи" 
+                       FontSize="28" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,25" 
+                       Foreground="#333"/>
+
+            <ListView ItemsSource="{Binding Users}" 
+                      SelectedItem="{Binding SelectedUser, Mode=TwoWay}"
+                      Background="White"
+                      BorderBrush="#DDD"
+                      BorderThickness="1"
+                      Padding="10"
+                      Height="350"
+                      Margin="0,0,0,15"
+                      >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="300"/>
+                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Username}" Width="200"/>
+                        <GridViewColumn Header="Роль" DisplayMemberBinding="{Binding Role}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button Content="Удалить пользователя" 
+                    Command="{Binding DeleteUserCommand}" 
+                    Width="180" 
+                    Height="40"
+                    Background="#E53935" 
+                    Foreground="White" 
+                    FontWeight="SemiBold"
+                    HorizontalAlignment="Left"
+                    Cursor="Hand"
+                    Padding="5"
+                    />
+        </StackPanel>
+    </Grid>
+</UserControl>
